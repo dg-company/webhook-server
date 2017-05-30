@@ -1,6 +1,6 @@
 <?php
     
-    $path = explode("/", $_SERVER['PATH_INFO'] ?? $_SERVER['REQUEST_URI'] ?? null);
+    $path = explode("/", $_SERVER['PATH_INFO'] ?? $_SERVER['REDIRECT_URL'] ?? null);
     $name = $path[1] ?? null;
     $token = $path[2] ?? null;
     $params = array_slice($path, 3);
