@@ -12,5 +12,10 @@ RUN apt-get update \
     && apt-get update \
     && apt-cache policy docker-engine \
     && apt-get install docker-engine -y --force-yes
+    
+# Install sudo and grant docker access for user www-data
+RUN apt-get update \
+    && apt-get install sudo -y --force-yes \
+    && echo "www-data ALL=(ALL) NOPASSWD: /usr/bin/docker" >> /etc/sudoers
 
 COPY src /var/www/html
