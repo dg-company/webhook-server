@@ -55,11 +55,6 @@
             echo '</pre><br><br>';
         }
         
-        if ($status != 0) {
-            http_response_code(500);
-            die();
-        }
-        
     }
     
 ?>
